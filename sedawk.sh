@@ -1,4 +1,5 @@
 #!/bin/bash
+cp passwd passwd_new
 
 awk 'BEGIN {FS = OFS = ":"} {if ($1 == "saned") $7 = "/bin/bash"} {print $0}' passwd |
 sed '/avahi:/s/\/usr\/sbin\/nologin/\/bin\/bash/g' |
