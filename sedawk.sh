@@ -2,7 +2,6 @@
 
 #a. Create copy of passwd file to passwd_new. :exclamation: Do all modifications on passwd_new file
 cp passwd passwd_new
-
 #b. Change shell for user saned from /usr/sbin/nologin to /bin/bash using AWK
 awk 'BEGIN {FS = OFS = ":"} {if ($1 == "saned") $7 = "/bin/bash"} {print $0}' passwd |
 #c. Change shell for user avahi from /usr/sbin/nologin to /bin/bash using SED
